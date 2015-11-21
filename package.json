@@ -15,14 +15,17 @@
   },
   "author": "Brigade Engineering",
   "contributors": [
-    { "name": "Jan Paul Posma", "email": "jp.posma@brigade.com" }
+    {
+      "name": "Jan Paul Posma",
+      "email": "jp.posma@brigade.com"
+    }
   ],
   "license": "MIT",
   "devDependencies": {
-    "babel": "^5.1.9",
-    "babel-core": "^5.1.9",
-    "eslint": "^1.3.1",
-    "eslint-config-brigade": "^1.6.0"
+    "babel-cli": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "eslint": "^1.10.1",
+    "eslint-config-brigade": "^1.9.0"
   },
   "keywords": [
     "scroll",
