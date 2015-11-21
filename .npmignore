@@ -1,0 +1,6 @@
+*.gif
+.eslintignore
+.eslintrc
+.overcommit.yml
+CHANGELOG.md
+bower.json

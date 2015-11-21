@@ -1,0 +1,32 @@
+{
+  "name": "delayed-scroll-restoration-polyfill",
+  "version": "0.1.0",
+  "description": "Limited polyfill for Chrome's delayed scroll restoration behavior.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brigade/delayed-scroll-restoration-polyfill.git"
+  },
+  "homepage": "https://github.com/brigade/delayed-scroll-restoration-polyfill",
+  "bugs": "https://github.com/brigade/delayed-scroll-restoration-polyfill/issues",
+  "scripts": {
+    "build-npm": "babel index.es6.js --out-file index.js",
+    "prepublish": "npm run build-npm"
+  },
+  "author": "Brigade Engineering",
+  "contributors": [
+    { "name": "Jan Paul Posma", "email": "jp.posma@brigade.com" }
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.1.9",
+    "babel-core": "^5.1.9",
+    "eslint": "^1.3.1",
+    "eslint-config-brigade": "^1.6.0"
+  },
+  "keywords": [
+    "scroll",
+    "restoration",
+    "polyfill"
+  ]
+}
