@@ -3,7 +3,7 @@
   "main": "index.js",
   "version": "0.1.0",
   "homepage": "https://github.com/brigade/delayed-scroll-restoration-polyfill",
-  "description": "Limited polyfill for Chrome's delayed scroll restoration behavior.",
+  "description": "Polyfill that mimics Chrome's scroll restoration behavior.",
   "moduleType": [
     "es6",
     "node"

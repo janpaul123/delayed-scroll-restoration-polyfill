@@ -1,4 +1,4 @@
-# Limited polyfill for Chrome's delayed scroll restoration behavior
+# Polyfill that mimics Chrome's scroll restoration behavior
 
 In single page apps that use the history API for navigation, the DOM is
 typically not completely ready immediately when the `popstate` event is

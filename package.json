@@ -1,7 +1,7 @@
 {
   "name": "delayed-scroll-restoration-polyfill",
   "version": "0.1.0",
-  "description": "Limited polyfill for Chrome's delayed scroll restoration behavior.",
+  "description": "Polyfill that mimics Chrome's scroll restoration behavior.",
   "main": "index.js",
   "repository": {
     "type": "git",
