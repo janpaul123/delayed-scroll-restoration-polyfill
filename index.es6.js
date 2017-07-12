@@ -27,6 +27,7 @@ if (window.history.pushState) {
   };
 
   let timeoutHandle = null;
+  let scrollBarWidth = null;
 
   // Try to scroll to the scrollTarget, but only if we can actually scroll
   // there. Otherwise keep trying until we time out, then scroll as far as
@@ -37,6 +38,9 @@ if (window.history.pushState) {
 
     const body = document.body;
     const html = document.documentElement;
+    if (!scrollBarWidth) {
+      scrollBarWidth = getScrollbarWidth();
+    }
 
     // From http://stackoverflow.com/a/1147768
     const documentWidth = Math.max(body.scrollWidth, body.offsetWidth,
@@ -44,8 +48,8 @@ if (window.history.pushState) {
     const documentHeight = Math.max(body.scrollHeight, body.offsetHeight,
       html.clientHeight, html.scrollHeight, html.offsetHeight);
 
-    if (documentWidth - window.innerWidth >= scrollTarget.x &&
-        documentHeight - window.innerHeight >= scrollTarget.y ||
+    if (documentWidth + scrollBarWidth - window.innerWidth >= scrollTarget.x &&
+        documentHeight + scrollBarWidth - window.innerHeight >= scrollTarget.y ||
         Date.now() > scrollTarget.latestTimeToTry) {
       window.scrollTo(scrollTarget.x, scrollTarget.y);
     } else {
@@ -68,6 +72,32 @@ if (window.history.pushState) {
       }));
     }
   };
+
+  // Calculating width of browser's scrollbar
+  function getScrollbarWidth() {
+    let outer = document.createElement("div");
+    outer.style.visibility = "hidden";
+    outer.style.width = "100px";
+    outer.style.msOverflowStyle = "scrollbar";
+
+    document.body.appendChild(outer);
+
+    let widthNoScroll = outer.offsetWidth;
+    // force scrollbars
+    outer.style.overflow = "scroll";
+
+    // add innerdiv
+    let inner = document.createElement("div");
+    inner.style.width = "100%";
+    outer.appendChild(inner);        
+
+    let widthWithScroll = inner.offsetWidth;
+
+    // remove divs
+    outer.parentNode.removeChild(outer);
+
+    return widthNoScroll - widthWithScroll;
+  }
 
   window.addEventListener('popstate', onPopState, true);
 }
