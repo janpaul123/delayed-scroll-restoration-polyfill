@@ -34,7 +34,7 @@ bower install delayed-scroll-restoration-polyfill --save
 ```
 
 ### In your HTML
-```
+```html
 <script src='node_modules/delayed-scroll-restoration-polyfill/index.js'></script>
 ```
 
@@ -48,6 +48,18 @@ bower install delayed-scroll-restoration-polyfill --save
    trying to restore the scroll position, which we only do if the page
    actually  has the correct width and height.
 4. After a few seconds we time out and scroll as far as we can.
+
+## Disabling native implementations
+
+While this polyfill is designed to work alongside native implementations, if you
+nevertheless experience compatibility problems, we suggest you disable native
+scroll restoration in browsers that support it, like this:
+
+```js
+if ('scrollRestoration' in window.history) {
+  window.history.scrollRestoration = 'manual';
+}
+```
 
 ## Differences from Chrome's native implementation
 
