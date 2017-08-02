@@ -28,11 +28,6 @@ Check out [Brigade.com](https://brigade.com) for an example:
 npm install delayed-scroll-restoration-polyfill --save
 ```
 
-### bower
-```
-bower install delayed-scroll-restoration-polyfill --save
-```
-
 ### In your HTML
 ```html
 <script src='node_modules/delayed-scroll-restoration-polyfill/index.js'></script>
