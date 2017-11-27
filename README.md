@@ -30,7 +30,12 @@ npm install delayed-scroll-restoration-polyfill --save
 
 ### In your HTML
 ```html
-<script src='node_modules/delayed-scroll-restoration-polyfill/index.js'></script>
+<script src="node_modules/delayed-scroll-restoration-polyfill/index.js"></script>
+```
+
+You can also grab the polyfill directly from unpkg.com: 
+```html
+<script src="https://unpkg.com/delayed-scroll-restoration-polyfill@0.1.1/index.js"></script>
 ```
 
 ## How it works
