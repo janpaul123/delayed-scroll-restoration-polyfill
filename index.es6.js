@@ -1,4 +1,4 @@
-if (window.history.pushState) {
+if (typeof window !== 'undefined' && window.history && window.history.pushState) {
   const SCROLL_RESTORATION_TIMEOUT_MS = 3000;
   const TRY_TO_SCROLL_INTERVAL_MS = 50;
 
