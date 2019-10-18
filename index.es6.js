@@ -8,8 +8,8 @@ if (window.history.pushState) {
   // Store current scroll position in current state when navigating away.
   window.history.pushState = function() {
     const newStateOfCurrentPage = Object.assign({}, window.history.state, {
-      __scrollX: window.scrollX,
-      __scrollY: window.scrollY,
+      __scrollX: window.pageXOffset || document.documentElement.scrollLeft,
+      __scrollY: window.pageYOffset || document.documentElement.scrollTop,
     });
     originalReplaceState.call(window.history, newStateOfCurrentPage, '');
 
@@ -63,8 +63,8 @@ if (window.history.pushState) {
     const state = window.history.state;
 
     if (state &&
-        Number.isFinite(state.__scrollX) &&
-        Number.isFinite(state.__scrollY)) {
+        isFinite(state.__scrollX) &&
+        isFinite(state.__scrollY)) {
       setTimeout(() => tryToScrollTo({
         x: state.__scrollX,
         y: state.__scrollY,
